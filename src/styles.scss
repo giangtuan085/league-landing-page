@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+@import './assets/scss/variables';
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+html,
+body {
+    font-size: 100%;
+    position: relative;
+    height: 100%;
+}
+
+body {
+    font-family: $font-family;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: $black;
+    color: $white;
+    overflow: hidden;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+iframe {
+    border: 0;
+}
+
+.container {
+    max-width: 1670px;
+    margin: auto;
+}
