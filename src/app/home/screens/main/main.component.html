@@ -1,0 +1,13 @@
+<swiper
+  @fade
+  [config]="swiperOptions"
+  (swiper)="onSwiper($event)"
+  (slideChange)="onSlideChange()"
+>
+  <ng-template swiperSlide let-data>
+    <welcome [isActive]="data.isActive"></welcome>
+  </ng-template>
+  <ng-template swiperSlide let-data>
+    <champions [isActive]="data.isActive"></champions>
+  </ng-template>
+</swiper>

@@ -87,3 +87,9 @@ export const NavList: Nav[] = [
         path: 'support'
     },
 ];
+
+export const WelcomeChampPreview: string[] = [
+    'assets/images/Champion_ashe_HP.png',
+    'assets/images/Champion_Ahri_HP.png',
+    'assets/images/Champion_garen_HP.png',
+];

@@ -1,0 +1,6 @@
+@import '../section/section.component.scss';
+.section__content {
+    transform: scale(1);
+    opacity: 1;
+    transition-delay: 3s;
+}

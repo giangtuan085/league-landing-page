@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-champions',
+  selector: 'champions',
   templateUrl: './champions.component.html',
   styleUrls: ['./champions.component.scss']
 })
 export class ChampionsComponent implements OnInit {
+  @Input() isActive: string = '';
 
   constructor() { }
 
