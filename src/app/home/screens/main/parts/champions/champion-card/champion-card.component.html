@@ -1,0 +1,7 @@
+<div  class="champion-card" (click)="viewChampDetail()">
+    <div class="frame">
+        <div class="bg-image overlay bg" [style.background-image]="'url(' + champ.bg + ')'"></div>
+    </div>
+    <img #imgRef [src]="champ.img" alt="" />
+    <div class="name">{{ champ.name }}</div>
+</div>

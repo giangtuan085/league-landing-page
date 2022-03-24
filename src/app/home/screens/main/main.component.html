@@ -2,7 +2,7 @@
   @fade
   [config]="swiperOptions"
   (swiper)="onSwiper($event)"
-  (slideChange)="onSlideChange()"
+  (slideChange)="onSlideChange($event)"
 >
   <ng-template swiperSlide let-data>
     <welcome [isActive]="data.isActive"></welcome>

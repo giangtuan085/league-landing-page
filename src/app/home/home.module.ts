@@ -10,6 +10,7 @@ import { SupportComponent } from './screens/support/support.component';
 import { MainComponent } from './screens/main/main.component';
 import { SharedModule } from '../shared/shared.module';
 import { WelcomeComponent } from './screens/main/parts/welcome/welcome.component';
+import { ChampionCardComponent } from './screens/main/parts/champions/champion-card/champion-card.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { WelcomeComponent } from './screens/main/parts/welcome/welcome.component
     SupportComponent,
     MainComponent,
     WelcomeComponent,
+    ChampionCardComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
   exports: [HomeComponent],

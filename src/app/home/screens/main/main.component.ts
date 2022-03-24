@@ -11,11 +11,11 @@ SwiperCore.use([Mousewheel, EffectFade, Pagination, Autoplay]);
   animations: [
     trigger('fade', [      
       transition('void => *', [
-        style({height: 0}),
-        animate(1500, style({height: '100%'}))
+        style({opacity: 0}),
+        animate(1500, style({opacity: 1}))
       ]),
       transition('* => void', [
-        animate(1000, style({height: 0}))
+        animate(1000, style({opacity: 0}))
       ])
     ])
   ]
@@ -40,7 +40,9 @@ export class MainComponent implements OnInit {
   onSwiper(swiper: any): void {
     console.log(swiper);
   }
-  onSlideChange(): void {
+
+  onSlideChange(e: any): void {
+    console.log(e);
   }
 
 }

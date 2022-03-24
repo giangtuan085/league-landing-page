@@ -1,6 +1,18 @@
+@use "sass:math";
 @import '../section/section.component.scss';
 .section__content {
     transform: scale(1);
     opacity: 1;
     transition-delay: 3s;
+}
+
+.swiper-slide {
+    transform: translateX(0);
+    opacity: 1;
+
+    @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+            transition-delay: #{math.div($i, 2)}s;
+        }
+    }
 }

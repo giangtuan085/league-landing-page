@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
-  @Input() isActive: string = '';
+  @Input() isActive: boolean;
   animationInterval: any; // interval saved ID
   isInitialized: boolean;
   animates: any[] = []; // animation list
