@@ -1,4 +1,5 @@
 <home-section
+  *ngIf="!selectedChampion; else championDetail"
   [className]="'champion '"
   [contentClassName]="'overlay champion__content'"
   [bgImage]="'assets/images/bg-2.jpg'"
@@ -13,9 +14,19 @@
         [nested]="true"
       >
         <ng-template swiperSlide let-data *ngFor="let champ of champions">
-          <champion-card [champ]="champ"></champion-card>
+          <champion-card
+            [champ]="champ"
+            (click)="viewDetail(champ)"
+          ></champion-card>
         </ng-template>
       </swiper>
     </div>
   </div>
 </home-section>
+
+<ng-template #championDetail>
+  <champion-detail
+    [champ]="selectedChampion"
+    (close)="closeDetail()"
+  ></champion-detail>
+</ng-template>

@@ -3,9 +3,8 @@ import { SwiperModule } from 'swiper/angular';
 import { HomeSectionComponent } from './components/home-section/home-section.component';
 import { SectionComponent } from './components/section/section.component';
 import { SectionContentComponent } from './components/section-content/section-content.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { MButtonComponent } from './components/m-button/m-button.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -15,14 +14,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SectionContentComponent,
     MButtonComponent
   ],
-  imports: [SwiperModule, BrowserModule, BrowserAnimationsModule],
+  imports: [SwiperModule, CommonModule],
   exports: [
     SwiperModule,
     SectionComponent,
     HomeSectionComponent,
-    BrowserModule,
     MButtonComponent,
-    BrowserAnimationsModule,
   ]
 })
 export class SharedModule { }

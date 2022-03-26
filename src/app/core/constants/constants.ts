@@ -15,7 +15,7 @@ export const ChampionsData: Champion[] = [
     },
     {
         img: 'assets/images/fortune_card.png',
-        name: 'miss fortune',
+        name: 'miss-fortune',
         bg: 'assets/images/fortune-bg.jpg',
         nickName: 'THE BOUNTY HUNTER',
         role: 'MARKSMAN',

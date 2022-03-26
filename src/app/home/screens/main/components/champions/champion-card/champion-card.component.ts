@@ -8,13 +8,14 @@ import { Champion } from 'src/app/core/models/champion';
 })
 export class ChampionCardComponent implements OnInit {
   @Input() champ: Champion;
-  @ViewChild('cardRef') imgRef: ElementRef;
+  @ViewChild('imgRef') imgRef: ElementRef;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public viewChampDetail(): void {
+  // on click, zoom in image and add transition to detail view
+  public transformImg(): void {
     const img = this.imgRef.nativeElement;
     const pos = img.getBoundingClientRect();
 
@@ -29,18 +30,15 @@ export class ChampionCardComponent implements OnInit {
     newNode.style.transition = 'all 0.7s ease';
     newNode.id = `champ-img-${this.champ.name}`;
 
+    // delay transition
     setTimeout(() => {
-        newNode.style.width = 'auto';
-        newNode.style.height = '100%';
-        newNode.style.top = 0;
-        newNode.style.left = 0;
+      newNode.style.width = 'auto';
+      newNode.style.height = '100%';
+      newNode.style.top = 0;
+      newNode.style.left = 0;
     },)
 
     document.body.appendChild(newNode);
-
-    const videoUrl = `https://youtube.com/embed/${this.champ.video}`;
-    document.querySelector(`#champ-detail-${this.champ.name} iframe`).setAttribute('src', videoUrl);
-    document.querySelector(`#champ-detail-${this.champ.name}`).classList.add('active');
   }
 
 }

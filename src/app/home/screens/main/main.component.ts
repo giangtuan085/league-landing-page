@@ -20,15 +20,13 @@ SwiperCore.use([Mousewheel, EffectFade, Pagination, Autoplay]);
     ])
   ]
 })
+
 export class MainComponent implements OnInit {
   swiperOptions: SwiperOptions = {
     direction: 'vertical',
     slidesPerView: 1,
     spaceBetween: 0,
     mousewheel: true,
-    // pagination: {
-    //   clickable: true
-    // },
     effect: 'slide',
   };
 
@@ -38,11 +36,9 @@ export class MainComponent implements OnInit {
   }
 
   onSwiper(swiper: any): void {
-    console.log(swiper);
   }
 
   onSlideChange(e: any): void {
-    console.log(e);
   }
 
 }

@@ -1,0 +1,22 @@
+<div [id]="'champ-detail-' + champ.name" class="champion-detail bg-image overlay" [class.active]="isActive"
+    [style.background-image]="'url(' + champ.bgLarge + ')'">
+
+    <div class="champion-detail__content">
+        <span>{{ champ.nickName }}</span>
+        <h2 class="name main-color">{{ champ.name }}</h2>
+        <span>Role: <span class="second-color">{{ champ.role }}</span></span>
+        <br />
+        <span>Difficulty:
+            <span class="second-color">{{ champ.difficulty }}</span></span>
+        <div class="story">{{ champ.description }}</div>
+        <span>Champion spotlight</span>
+        <div class="video">
+            <iframe title="champion spotlight" [src]="iframeRef" width="100%"></iframe>
+        </div>
+
+        <div class="champion-detail__close" (click)="onClose()">
+            <img [src]="'assets/images/two-sword.png'" alt="" />
+        </div>
+    
+    </div>
+</div>
