@@ -8,6 +8,7 @@ import { ChampionsComponent } from './components/champions/champions.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { ChampionDetailComponent } from './components/champion-detail/champion-detail.component';
 import { TrailerComponent } from './components/trailer/trailer.component';
+import { CreditComponent } from './components/credit/credit.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TrailerComponent } from './components/trailer/trailer.component';
     ChampionsComponent,
     WelcomeComponent,
     ChampionDetailComponent,
-    TrailerComponent
+    TrailerComponent,
+    CreditComponent
   ],
   imports: [CommonModule, MainRoutingModule, SharedModule],
   exports: [],

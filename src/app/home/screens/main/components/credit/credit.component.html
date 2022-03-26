@@ -1,0 +1,12 @@
+<div class="credit overlay" [ngClass]="isActive ? 'active' : ''">
+    <video
+        #videoPlayer
+        width="100%"
+        height="auto"
+        [loop]="true"
+        class="overlay"
+        muted
+    >
+        <source [src]="'assets/videos/bg-video.mp4'" type="video/mp4"/>
+    </video>
+</div>
