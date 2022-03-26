@@ -6,7 +6,7 @@ import { MainComponent } from './main.component';
 import { ChampionCardComponent } from './components/champions/champion-card/champion-card.component';
 import { ChampionsComponent } from './components/champions/champions.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-import { ChampionDetailComponent } from './components/champion-detail/champion-detail.component';
+import { ChampionDetailComponent } from './components/champions/champion-detail/champion-detail.component';
 import { TrailerComponent } from './components/trailer/trailer.component';
 import { CreditComponent } from './components/credit/credit.component';
 

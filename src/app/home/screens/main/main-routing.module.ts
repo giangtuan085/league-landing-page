@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ChampionDetailComponent } from './components/champion-detail/champion-detail.component';
+import { ChampionDetailComponent } from './components/champions/champion-detail/champion-detail.component';
 import { MainComponent } from './main.component';
 
 
