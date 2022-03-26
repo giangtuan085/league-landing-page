@@ -1,0 +1,23 @@
+<home-section
+  class="trailer"
+  [ngClass]="isActive ? 'active' : ''"
+  [isActive]="isActive"
+  [contentClassName]="'overlay trailer__content'"
+  [bgImage]="'assets/images/bg-3.jpg'"
+>
+  <div class="trailer__content__img">
+    <img [src]="'assets/images/ekko_arcane.png'" alt="" />
+  </div>
+  <div class="trailer__content__info">
+    <div class="title">
+      <span>Brilliant and Engrossing</span>
+      <h2 class="main-color">Story</h2>
+    </div>
+    <div class="video">
+      <iframe
+        title="trailer"
+        src="https://www.youtube.com/embed/fXmAurh012s"
+      ></iframe>
+    </div>
+  </div>
+</home-section>
