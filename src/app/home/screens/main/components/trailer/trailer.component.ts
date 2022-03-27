@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { SafeResourceUrl } from '@angular/platform-browser';
 import { Trailer } from 'src/app/core/constants/constants';
+import { SanitizeService } from 'src/app/core/services/sanitize/sanitize.service';
 
 @Component({
   selector: 'trailer',
@@ -11,18 +12,14 @@ export class TrailerComponent implements OnInit, AfterViewInit {
   @Input() isActive: boolean;
   trailer: SafeResourceUrl;
 
-  constructor(private sanitizer: DomSanitizer) {
-    this.trailer = this.transform(Trailer);
+  constructor(private sanitizer: SanitizeService) {
+    this.trailer = this.sanitizer.transform(Trailer);
   }
  
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
-  }
-
-  private transform(url: string): SafeResourceUrl {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(`https://youtube.com/embed/${url}`);
   }
 
 }
