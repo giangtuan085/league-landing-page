@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { Champion } from 'src/app/core/models/champion';
+import { SafeResourceUrl } from '@angular/platform-browser';
 import { SanitizeService } from 'src/app/core/services/sanitize/sanitize.service';
+import { IChampion } from 'src/app/core/models/champion';
 
 @Component({
   selector: 'champion-detail',
@@ -9,7 +9,7 @@ import { SanitizeService } from 'src/app/core/services/sanitize/sanitize.service
   styleUrls: ['./champion-detail.component.scss']
 })
 export class ChampionDetailComponent implements OnInit, OnChanges {
-  @Input() champ: Champion;
+  @Input() champ: IChampion;
   @Input() isActive: boolean = true;
   @Output() close = new EventEmitter<string>();
   iframeRef: SafeResourceUrl;

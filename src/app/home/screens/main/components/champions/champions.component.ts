@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { ChampionsData } from 'src/app/core/constants/constants';
-import { Champion } from 'src/app/core/models/champion';
+import { IChampion } from 'src/app/core/models/champion';
 
 @Component({
   selector: 'champions',
@@ -10,8 +10,8 @@ import { Champion } from 'src/app/core/models/champion';
 })
 export class ChampionsComponent implements OnInit, OnChanges {
   @Input() isActive: boolean;
-  champions: Champion[] = ChampionsData;
-  selectedChampion: Champion;
+  champions: IChampion[] = ChampionsData;
+  selectedChampion: IChampion;
 
   constructor() { }
 
@@ -21,7 +21,7 @@ export class ChampionsComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
   }
 
-  public viewDetail(champ: Champion): void {
+  public viewDetail(champ: IChampion): void {
     this.selectedChampion = champ;
   }
 
