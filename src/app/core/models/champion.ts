@@ -35,13 +35,7 @@ export class Champion implements IChampion {
         this.bgLarge = champ.bgLarge;
         this.sanitizer = sanitizer;
 
-        this.initDifficulty();
-    }
-
-    private initDifficulty(): void {
-        if (!this.difficulty) {
-            this.difficulty = 'LOW';
-        }
+        this.difficulty = 'LOW';
     }
 
     public getVideo(): SafeResourceUrl {
@@ -74,5 +68,12 @@ export class Mage extends Champion {
     constructor(champ: IChampion, override sanitizer?: DomSanitizer) {
         super(champ, sanitizer);
         this.difficulty = 'MODERATE';
+    }
+}
+
+export class ArcaneCharacter extends Champion {
+    constructor(champ: IChampion, override sanitizer?: DomSanitizer) {
+        super(champ, sanitizer);
+        this.difficulty = '';
     }
 }
