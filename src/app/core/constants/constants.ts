@@ -94,3 +94,5 @@ export const WelcomeChampPreview: string[] = [
     'assets/images/Champion_Ahri_HP.png',
     'assets/images/Champion_garen_HP.png',
 ];
+
+export const Trailer: string = 'fXmAurh012s';
