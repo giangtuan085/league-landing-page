@@ -5,6 +5,7 @@ import { SectionComponent } from './components/section/section.component';
 import { SectionContentComponent } from './components/section-content/section-content.component';
 import { MButtonComponent } from './components/m-button/m-button.component';
 import { CommonModule } from '@angular/common';
+import { ChampionCardComponent } from './components/champion-card/champion-card.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { CommonModule } from '@angular/common';
     HomeSectionComponent,
     SectionComponent,
     SectionContentComponent,
-    MButtonComponent
+    MButtonComponent,
+    ChampionCardComponent,
   ],
   imports: [SwiperModule, CommonModule],
   exports: [

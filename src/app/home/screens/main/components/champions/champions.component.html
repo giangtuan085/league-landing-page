@@ -4,24 +4,10 @@
   [contentClassName]="'overlay champion__content'"
   [bgImage]="'assets/images/bg-2.jpg'"
   [isActive]="isActive"
+  [page]="2"
+  (viewDetailEvent)="viewDetail($event)"
+  (closeDetailEvent)="closeDetail()"
 >
-  <div class="container relative">
-    <div class="champion-list">
-      <swiper
-        [slidesPerView]="'auto'"
-        [spaceBetween]="0"
-        [grabCursor]="true"
-        [nested]="true"
-      >
-        <ng-template swiperSlide let-data *ngFor="let champ of champions">
-          <champion-card
-            [champ]="champ"
-            (click)="viewDetail(champ)"
-          ></champion-card>
-        </ng-template>
-      </swiper>
-    </div>
-  </div>
 </home-section>
 
 <ng-template #championDetail>

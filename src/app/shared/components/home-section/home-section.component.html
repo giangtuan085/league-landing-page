@@ -1,5 +1,54 @@
 <section [className]="className" [isActive]="isActive">
     <section-content [className]="contentClassName" [bgImage]="bgImage">
+
+        <ng-container *ngIf="page === 1">
+            <div class="welcome__info relative">
+                <div class="welcome__info__content">
+                    <div class="title">
+                        <span>Welcome To</span>
+                        <h2 class="main-color">Summoner's Rift</h2>
+                    </div>
+
+                    <div class="description m-t-4">
+                        Team up with friends and test your skills in 5v5 MOBA combat. All
+                        the high-skill competition you crave, designed especially for mobile
+                        and console with revamped controls and streamlined matches.Explore
+                        the living universe of Runeterra through lore, comics, games, and
+                        more. Then dive into the community of gamers, cosplayers, musicians,
+                        and content creators who are waiting for you to join them.
+                    </div>
+
+                    <div class="btns m-t-4">
+                        <m-button [className]="'btn-main'">PLAY NOW</m-button>
+                        <m-button [className]="'btn-second'">GET STARTED</m-button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="welcome__img relative">
+                <div class="welcome__img__slide" id="welcome__img__slide"></div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="page === 2">
+            <div class="container relative">
+                <div class="champion-list">
+                  <swiper
+                    [slidesPerView]="'auto'"
+                    [spaceBetween]="0"
+                    [grabCursor]="true"
+                    [nested]="true"
+                  >
+                    <ng-template swiperSlide let-data *ngFor="let champ of champions">
+                      <champion-card
+                        [champ]="champ"
+                        (click)="viewDetail(champ)"
+                      ></champion-card>
+                    </ng-template>
+                  </swiper>
+                </div>
+              </div>
+        </ng-container>
         <ng-content></ng-content>
     </section-content>
 </section>
