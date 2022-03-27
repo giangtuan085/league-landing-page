@@ -2,7 +2,7 @@ import { AfterViewInit, Component, EventEmitter, HostListener, Input, OnChanges,
 import { Subscription } from 'rxjs';
 import { ChampionsData, WelcomeChampPreview } from 'src/app/core/constants/constants';
 import hoverEffect from 'hover-effect';
-import { Champion } from 'src/app/core/models/champion';
+import { IChampion } from 'src/app/core/models/champion';
 
 @Component({
   selector: 'home-section',
@@ -15,15 +15,15 @@ export class HomeSectionComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() bgImage: string = '';
   @Input() isActive: boolean;
   @Input() page: number;
-  @Output() viewDetailEvent = new EventEmitter<Champion>();
-  @Output() closeDetailEvent = new EventEmitter<Champion>();
+  @Output() viewDetailEvent = new EventEmitter<IChampion>();
+  @Output() closeDetailEvent = new EventEmitter<IChampion>();
   animationInterval: any; // interval saved ID
   isInitialized: boolean;
   animates: any[] = []; // animation list
   previews: string[] = WelcomeChampPreview;
   isFocus: boolean = true; // check window active
-  champions: Champion[] = ChampionsData;
-  selectedChampion: Champion;
+  champions: IChampion[] = ChampionsData;
+  selectedChampion: IChampion;
 
   constructor() { }
 
@@ -100,7 +100,7 @@ export class HomeSectionComponent implements OnInit, AfterViewInit, OnDestroy {
   // ||| END PAGE 1 |||
 
   // ||| START PAGE 2 |||
-  public viewDetail(champ: Champion): void {
+  public viewDetail(champ: IChampion): void {
     this.selectedChampion = champ;
     this.viewDetailEvent.emit(this.selectedChampion);
   }

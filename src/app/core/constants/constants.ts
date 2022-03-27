@@ -1,7 +1,7 @@
-import { Champion } from "../models/champion";
+import { IChampion } from "../models/champion";
 import { Nav } from "../models/nav"
 
-export const ChampionsData: Champion[] = [
+export const ChampionsData: IChampion[] = [
     {
         img: 'assets/images/akali_card.png',
         name: 'akali',

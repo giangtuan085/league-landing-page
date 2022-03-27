@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { Champion } from 'src/app/core/models/champion';
+import { IChampion } from 'src/app/core/models/champion';
 
 @Component({
   selector: 'champion-card',
@@ -7,7 +7,7 @@ import { Champion } from 'src/app/core/models/champion';
   styleUrls: ['./champion-card.component.scss']
 })
 export class ChampionCardComponent implements OnInit {
-  @Input() champ: Champion;
+  @Input() champ: IChampion;
   @ViewChild('imgRef') imgRef: ElementRef;
   constructor() { }
 
