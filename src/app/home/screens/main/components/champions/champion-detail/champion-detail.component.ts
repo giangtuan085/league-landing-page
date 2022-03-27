@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Champion } from 'src/app/core/models/champion';
+import { SanitizeService } from 'src/app/core/services/sanitize/sanitize.service';
 
 @Component({
   selector: 'champion-detail',
@@ -13,20 +14,15 @@ export class ChampionDetailComponent implements OnInit, OnChanges {
   @Output() close = new EventEmitter<string>();
   iframeRef: SafeResourceUrl;
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(private sanitizer: SanitizeService) {
   }
 
   ngOnInit(): void {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.iframeRef = this.transform(this.champ?.video);
+    this.iframeRef = this.sanitizer.transform(this.champ?.video);
   }
-
-  private transform(url: string): SafeResourceUrl {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(`https://youtube.com/embed/${url}`);
-  }
-
 
   public onClose(): void {
     this.isActive = false;
