@@ -24,7 +24,7 @@ export class Champion implements IChampion {
     bgLarge: string;
     sanitizer?: DomSanitizer;
 
-    constructor(champ: IChampion, sanitizer: DomSanitizer) {
+    constructor(champ: IChampion, sanitizer?: DomSanitizer) {
         this.img = champ.img;
         this.name = champ.name;
         this.bg = champ.bg;
@@ -35,24 +35,12 @@ export class Champion implements IChampion {
         this.bgLarge = champ.bgLarge;
         this.sanitizer = sanitizer;
 
-        this.assignDifficulty();
+        this.initDifficulty();
     }
 
-    private assignDifficulty(): void {
-        switch (this.role) {
-            case 'ASSASSIN':
-            case 'MARKSMAN':
-                this.difficulty = 'HARD';
-                break;
-            case 'FIGHTER':
-                this.difficulty = 'LOW';
-                break;
-            case 'MAGE':
-                this.difficulty = 'MODERATE';
-                break;
-            default:
-                this.difficulty = 'LOW';
-                break;
+    private initDifficulty(): void {
+        if (!this.difficulty) {
+            this.difficulty = 'LOW';
         }
     }
 
@@ -64,23 +52,27 @@ export class Champion implements IChampion {
 export class Assasin extends Champion {
     constructor(champ: IChampion, override sanitizer?: DomSanitizer) {
         super(champ, sanitizer);
+        this.difficulty = 'HARD';
     }
 }
 
 export class Marksman extends Champion {
     constructor(champ: IChampion, override sanitizer?: DomSanitizer) {
         super(champ, sanitizer);
+        this.difficulty = 'HARD';
     }
 }
 
 export class Fighter extends Champion {
     constructor(champ: IChampion, override sanitizer?: DomSanitizer) {
         super(champ, sanitizer);
+        this.difficulty = 'LOW';
     }
 }
 
 export class Mage extends Champion {
     constructor(champ: IChampion, override sanitizer?: DomSanitizer) {
         super(champ, sanitizer);
+        this.difficulty = 'MODERATE';
     }
 }

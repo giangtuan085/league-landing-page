@@ -1,8 +1,6 @@
 import { AfterViewInit, Component, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
 import { WelcomeChampPreview } from 'src/app/core/constants/constants';
 import hoverEffect from 'hover-effect';
-import { NavigationEnd, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'welcome',
@@ -15,14 +13,9 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   isInitialized: boolean;
   animates: any[] = []; // animation list
   previews: string[] = WelcomeChampPreview;
-  routerSub: Subscription;
   isFocus: boolean = true; // check window active
 
-  constructor(private router: Router) {
-    this.routerSub = router.events.subscribe((e) => {
-      if (e instanceof NavigationEnd && e.url !== '/') {
-      }
-    });
+  constructor() {
 
   }
 
@@ -39,7 +32,6 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
       clearInterval(this.animationInterval);
       this.animationInterval = 0;
     }
-    this.routerSub.unsubscribe();
   }
 
   // TODO: break this down, refactor to angular style
