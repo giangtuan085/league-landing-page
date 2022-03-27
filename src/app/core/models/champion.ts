@@ -71,6 +71,7 @@ export class Mage extends Champion {
     }
 }
 
+// characters only shows up in Arcane show, unplayable
 export class ArcaneCharacter extends Champion {
     constructor(champ: IChampion, override sanitizer?: DomSanitizer) {
         super(champ, sanitizer);

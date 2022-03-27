@@ -33,15 +33,15 @@ export class ChampionsComponent implements OnInit, OnChanges {
 
   private initChampData(): IChampion[] {
     return [
-      new ArcaneCharacter({
-        img: 'assets/images/silco_card.webp',
-        name: 'silco',
-        bg: 'assets/images/silco-bg.jpg',
-        nickName: 'The Eye of Zaun',
-        role: 'ANTAGONIST',
-        description: `Silco was a Zaun Crest icon.png Zaunite drug lord and industrialist, and the adoptive father of Jinx Jinx. A tyrannical and megalomaniacal individual, he was a radical supporter of Zaun's independence from Piltover Crest icon.png Piltover and was willing to do just about anything to achieve it.`,
-        video: 'Jyttj284oik',
-        bgLarge: 'assets/images/silco-bg-large.webp'
+      new Assasin({
+        img: 'assets/images/akali_card.png',
+        name: 'akali',
+        bg: 'assets/images/akali-bg.jpg',
+        nickName: 'THE ROGUE ASSASSIN',
+        role: 'ASSASSIN',
+        description: `Abandoning the Kinkou Order and her title of the Fist of Shadow, Akali now strikes alone, ready to be the deadly weapon her people need. Though she holds onto all she learned from her master Shen, she has pledged to defend Ionia from its enemies, one kill at a time. Akali may strike in silence, but her message will be heard loud and clear: fear the assassin with no master.`,
+        video: 'sQ7ALTSCbdw',
+        bgLarge: 'assets/images/akali-bg-large.jpg'
       }),
 
       new Champion({
