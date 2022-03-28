@@ -12,6 +12,17 @@ export interface IChampion {
     bgLarge: string;
 }
 
+export interface IArcaneChampion {
+    img: string;
+    name: string;
+    bg: string;
+    nickName: string;
+    role: string;
+    description: string;
+    video: string;
+    bgLarge: string;
+}
+
 export class Champion implements IChampion {
     img: string;
     name: string;
@@ -71,9 +82,25 @@ export class Mage extends Champion {
     }
 }
 
-export class ArcaneCharacter extends Champion {
-    constructor(champ: IChampion, override sanitizer?: DomSanitizer) {
-        super(champ, sanitizer);
-        this.difficulty = '';
+// characters only shows up in Arcane show, unplayable
+export class ArcaneCharacter implements IArcaneChampion {
+    img: string;
+    name: string;
+    bg: string;
+    nickName: string;
+    role: string;
+    description: string;
+    video: string;
+    bgLarge: string;
+
+    constructor(champ: IChampion) {
+        this.img = champ.img;
+        this.name = champ.name;
+        this.bg = champ.bg;
+        this.nickName = champ.nickName;
+        this.role = champ.role;
+        this.description = champ.description;
+        this.video = champ.video;
+        this.bgLarge = champ.bgLarge;
     }
 }
